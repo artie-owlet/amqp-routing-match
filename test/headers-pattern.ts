@@ -25,7 +25,7 @@ describe('HeadersPattern', () => {
             })).equal(true);
         });
 
-        it ('should return true if headers not equal', () => {
+        it ('should return true if headers are not equal', () => {
             expect(hp.match({
                 a: 1,
                 b: 1,

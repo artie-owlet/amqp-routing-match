@@ -4,6 +4,11 @@ import { TopicPattern } from '../src/index';
 
 describe('TopicPattern', () => {
     describe('match', () => {
+        it('direct routing', () => {
+            expect(new TopicPattern('abc').match('abc')).equal(true);
+            expect(new TopicPattern('abc').match('abcd')).equal(false);
+        });
+
         it('*', () => {
             expect(new TopicPattern('*.b.c').match('a.b.c')).equal(true);
             expect(new TopicPattern('a.*.c').match('a.b.c')).equal(true);
@@ -39,6 +44,9 @@ describe('TopicPattern', () => {
             expect(new TopicPattern('a.#.c.#.e').match('a.b.c.d.e')).equal(true);
             expect(new TopicPattern('a.#.c.#.e').match('a.b.c.d.d.e')).equal(true);
             expect(new TopicPattern('a.#.c.#.e').match('a.b.d.e')).equal(false);
+            expect(new TopicPattern('a.#.#.c').match('a.c')).equal(true);
+            expect(new TopicPattern('a.#.#.c').match('a.b.c')).equal(true);
+            expect(new TopicPattern('a.#.#.c').match('a.b.b.c')).equal(true);
         });
     });
 });
