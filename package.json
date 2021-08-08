@@ -1,6 +1,6 @@
 {
   "name": "@artie-owlet/amqp-routing-match",
-  "version": "1.0.0-dev.0",
+  "version": "1.0.0",
   "description": "Package for matching AMQP routing keys and headers",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -15,8 +15,7 @@
     "coverage": "nyc npm run test"
   },
   "license": "MIT",
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {
     "@istanbuljs/nyc-config-typescript": "^1.0.1",
     "@types/chai": "^4.2.21",
